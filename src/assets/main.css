@@ -1,0 +1,69 @@
+@import "./base.css";
+
+a {
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    float: right;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+}
+.rating {
+    display: flex;
+    gap: 20px;
+}
+
+.artists {
+    padding: 20px;
+    .artists_option {
+        display: flex;
+        margin: 0 0 10px 0;
+    }
+    .artists_option:hover {
+        background-color: darkgrey;
+    }
+}
+
+.tracklist {
+    padding: 20px;
+    .track {
+        display: flex;
+
+        margin: 0 0 10px 0;
+    }
+    .track:hover {
+        background-color: darkgrey;
+    }
+}
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-weight: normal;
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        .artist-info {
+            padding: 1rem;
+            .artist-info_header {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                gap: 1rem;
+            }
+        }
+    }
+}
