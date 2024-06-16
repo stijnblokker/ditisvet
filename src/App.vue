@@ -35,17 +35,6 @@ const remark = computed({
     },
 });
 
-// const DownloadJSON = () => {
-//     const blob = new Blob([JSON.stringify(state.list, null, 2)], {
-//         type: "application/json",
-//     });
-//     const url = URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = url;
-//     a.download = `ditisvet.json`;
-//     a.click();
-//     URL.revokeObjectURL(url);
-// };
 const DownloadCSV = () => {
   let jsonToCSV = JSON.parse(JSON.stringify(state.list))
   jsonToCSV = jsonToCSV.map(row => {
@@ -69,7 +58,7 @@ const DownloadCSV = () => {
 
 const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    const json = Papa.parse(file, {
+    Papa.parse(file, {
       delimiter: ';',
         header: true,
         skipEmptyLines: true,
@@ -171,9 +160,6 @@ watch(page, async () => {
 <template>
     <header>
         <h1>DITISVET-LIJST</h1>
-<!--        <button @click="DownloadJSON" class="download-btn">-->
-<!--            Download JSON-->
-<!--        </button>-->
         <button @click="DownloadCSV" class="download-btn">Download CSV</button>
     </header>
     <hr />
